@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/index.css"],
+  "sourcesContent": ["body {\n    background-color: red !important;\n}"],
+  "mappings": ";AAAA;AACI,oBAAkB;AACtB;",
+  "names": []
+}
