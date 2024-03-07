@@ -28,7 +28,6 @@ window.Webflow.push(() => {
 
   /**
    * * Call Memberstack Function
-   * TODO : Page launcher
    * TODO : Check Air Picker : https://air-datepicker.com/examples
    */
 
