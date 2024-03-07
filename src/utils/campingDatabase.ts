@@ -182,7 +182,7 @@ export function signUpLoad(): void {
         communeDropdownInput.value = firstCommune;
         return firstCommune; // Retourne la première commune trouvée
       }
-      communeDropdownInput.value = 'Remplir manuellement';
+      /* communeDropdownInput.value = 'Remplir manuellement'; */ // Réactiver pour remplir champs explication
       return 'Aucune commune trouvée'; // Retourne cette chaîne si aucune commune n'est trouvée
     } catch (error) {
       console.error('Erreur lors de la récupération des données : ', error);
@@ -353,14 +353,14 @@ export function signUpLoad(): void {
  * * fillIfEmpty - Put text if empty
  */
 
-export function fillIfEmpty() {
+/* export function fillIfEmpty() {
   document.querySelector('.fs-combobox_option-empty')?.addEventListener('click', () => {
     const inputElement = document.getElementById('camping-name') as HTMLInputElement;
     if (inputElement) {
       inputElement.value = 'Remplir manuellement';
     }
   });
-}
+} */
 
 /*
  * * disabledTabInForm - UX for Tab Key + Autocomplete
@@ -379,4 +379,32 @@ export function disabledTabInForm() {
       inputCodePostal.setAttribute('autocomplete', 'new-password');
     }
   });
+}
+
+/*
+ * *💙 MEMBERSCRIPT #22 v0.1 💙 DISABLE SUBMIT BUTTON UNTIL REQUIRED FIELDS ARE COMPLETE
+ * * disabledTabInForm - UX for Tab Key + Autocomplete
+ */
+
+export function disableButtonIfRequired(): void {
+  window.onload = function () {
+    const forms = document.querySelectorAll('form[ms-code-submit-form]');
+
+    forms.forEach((form) => {
+      const submitButton = form.querySelector('input[type="submit"]');
+      const requiredFields = form.querySelectorAll<HTMLInputElement>('input[required]');
+
+      form.addEventListener('input', function () {
+        const allFilled = Array.from(requiredFields).every((field) => field.value.trim() !== '');
+
+        if (submitButton) {
+          if (allFilled) {
+            submitButton.classList.add('submit-enabled');
+          } else {
+            submitButton.classList.remove('submit-enabled');
+          }
+        }
+      });
+    });
+  };
 }

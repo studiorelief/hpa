@@ -1,6 +1,11 @@
 import './index.css';
 
-import { disabledTabInForm, /* fillIfEmpty, */ signUpLoad } from '$utils/campingDatabase';
+import {
+  disableButtonIfRequired,
+  disabledTabInForm,
+  /* fillIfEmpty, */
+  signUpLoad,
+} from '$utils/campingDatabase';
 import { mirrorPopupInfo } from '$utils/dashboard';
 import { decorativeAnim } from '$utils/gsap';
 import { swipeElement } from '$utils/jquery';
@@ -41,6 +46,7 @@ window.Webflow.push(() => {
     signUpLoad();
     /* fillIfEmpty(); */
     disabledTabInForm();
+    disableButtonIfRequired();
   }
 
   showHidePassword();
