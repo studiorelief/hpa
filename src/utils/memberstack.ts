@@ -157,7 +157,7 @@ export function redirectNotLog() {
 export function redirectIfNotOnValidatedPlan() {
   memberstack.getCurrentMember().then(({ data: member }) => {
     const url = window.location.href;
-    const validatedPlanId = 'dashboard-access';
+    const validatedPlanId = 'pln_signup-validated-8il70t5o';
     let isOnValidatedPlan = false;
 
     if (member && member.planConnections && url.includes('/dashboard/')) {
