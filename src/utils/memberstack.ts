@@ -195,7 +195,7 @@ export async function displayCurrentMemberData(): Promise<void> {
      * * 🚨 Show Current Member Data - Hide Prod 🚨
      **/
     // eslint-disable-next-line no-console
-    /* console.log('Données du membre actuel :', member); */
+    console.log('Données du membre actuel :', member);
 
     const popupInfo = document.getElementById('popup-info');
     if (!popupInfo) {
