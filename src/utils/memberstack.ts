@@ -1,7 +1,7 @@
 import memberstackDOM from '@memberstack/dom';
 
 const memberstack = memberstackDOM.init({
-  publicKey: 'pk_sb_60f02c0066b414d61dba',
+  publicKey: 'pk_25c585e49bb7fda38c3e',
 });
 
 /**

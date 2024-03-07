@@ -7,10 +7,10 @@ import { swipeElement } from '$utils/jquery';
 import { loadScript } from '$utils/loadScript';
 import {
   confirmPasswordInput,
-  displayCurrentMemberData,
+  /* displayCurrentMemberData, */
   passwordValidation,
-  redirectIfNotOnValidatedPlan,
-  redirectNotLog,
+  /* redirectIfNotOnValidatedPlan, */
+  /* redirectNotLog, */
   showHidePassword,
 } from '$utils/memberstack';
 import { swiperHome, swiperMember } from '$utils/swiper';
@@ -48,7 +48,7 @@ window.Webflow.push(() => {
    * ! Dashboard
    */
   mirrorPopupInfo();
-  displayCurrentMemberData();
+  /* displayCurrentMemberData(); */
 
   /**
    * ! Others
@@ -56,7 +56,7 @@ window.Webflow.push(() => {
   swiperMember();
   swiperHome();
 
-  redirectNotLog();
-  redirectIfNotOnValidatedPlan();
+  /* redirectNotLog(); */
+  /* redirectIfNotOnValidatedPlan(); */
   decorativeAnim();
 });
