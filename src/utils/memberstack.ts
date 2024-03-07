@@ -157,7 +157,7 @@ export function redirectNotLog() {
 export function redirectIfNotOnValidatedPlan() {
   memberstack.getCurrentMember().then(({ data: member }) => {
     const url = window.location.href;
-    const validatedPlanId = 'pln_signup-validated-8il70t5o';
+    const validatedPlanId = 'dashboard-access';
     let isOnValidatedPlan = false;
 
     if (member && member.planConnections && url.includes('/dashboard/')) {
@@ -195,7 +195,7 @@ export async function displayCurrentMemberData(): Promise<void> {
      * * 🚨 Show Current Member Data - Hide Prod 🚨
      **/
     // eslint-disable-next-line no-console
-    console.log('Données du membre actuel :', member);
+    /* console.log('Données du membre actuel :', member); */
 
     const popupInfo = document.getElementById('popup-info');
     if (!popupInfo) {
