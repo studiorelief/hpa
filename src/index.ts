@@ -9,8 +9,8 @@ import {
   confirmPasswordInput,
   displayCurrentMemberData,
   passwordValidation,
-  /* redirectIfNotOnValidatedPlan, */
-  /* redirectNotLog, */
+  redirectIfNotOnValidatedPlan,
+  redirectNotLog,
   showHidePassword,
 } from '$utils/memberstack';
 import { swiperHome, swiperMember } from '$utils/swiper';
@@ -56,7 +56,7 @@ window.Webflow.push(() => {
   swiperMember();
   swiperHome();
 
-  /* redirectNotLog(); */
-  /* redirectIfNotOnValidatedPlan(); */
+  redirectNotLog();
+  redirectIfNotOnValidatedPlan();
   decorativeAnim();
 });
