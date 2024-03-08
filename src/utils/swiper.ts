@@ -27,16 +27,17 @@ export function swiperMember() {
   });
 }
 
-export function swiperHome() {
+// V1 - Number
+/* export function swiperHome() {
   const swiper = new Swiper('.swiper.is-home', {
     direction: 'horizontal',
     grabCursor: false,
-    loop: true,
+    loop: false,
     slidesPerView: 'auto',
     spaceBetween: 64,
     centeredSlides: true,
     autoplay: {
-      delay: 3000,
+      delay: 10000,
       pauseOnMouseEnter: false,
       disableOnInteraction: false,
       reverseDirection: false,
@@ -62,4 +63,47 @@ export function swiperHome() {
   }
 
   updateSlideNumber(swiper.realIndex + 1);
+} */
+
+export function swiperHome(): void {
+  const swiper = new Swiper('.swiper.is-home', {
+    direction: 'horizontal',
+    grabCursor: false,
+    loop: false,
+    slidesPerView: 'auto',
+    spaceBetween: 64,
+    centeredSlides: true,
+    autoplay: {
+      delay: 10000,
+      pauseOnMouseEnter: false,
+      disableOnInteraction: false,
+      reverseDirection: false,
+    },
+    navigation: {
+      prevEl: '.swiper-slide-left',
+      nextEl: '.swiper-slide-right',
+    },
+    slideActiveClass: 'is-active',
+    speed: 1500,
+    on: {
+      init: function (this: Swiper) {
+        checkNavigationVisibility(this);
+      },
+      slideChange: function (this: Swiper) {
+        checkNavigationVisibility(this);
+      },
+    },
+  });
+
+  function checkNavigationVisibility(swiper: Swiper): void {
+    const prevButton = document.querySelector<HTMLElement>('.swiper-slide-left');
+    const nextButton = document.querySelector<HTMLElement>('.swiper-slide-right');
+
+    if (!prevButton || !nextButton) return;
+
+    prevButton.style.display = swiper.isBeginning ? 'none' : 'flex';
+    nextButton.style.display = swiper.isEnd ? 'none' : 'flex';
+  }
+
+  checkNavigationVisibility(swiper);
 }
